@@ -1,4 +1,4 @@
-FROM osrf/ros:iron-desktop-full
+FROM osrf/ros:noetic-desktop-full
 
 
 # Example of installing programs
@@ -34,7 +34,7 @@ RUN apt-get update \
 # Copy the entrypoint and bashrc scripts so we have 
 # our container's environment set up correctly
 COPY entrypoint.sh /entrypoint.sh
-# COPY .bashrc /home/${USERNAME}/.bashrc
+COPY .zshrc /home/${USERNAME}/.zshrc
 
 ENV TERM xterm-256color
 ENV SHELL /bin/zsh
